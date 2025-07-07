@@ -1,0 +1,14 @@
+[Unit]
+Description=Surface Dial Daemon
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/surface_dial
+ExecStart=/usr/bin/python3 /opt/surface_dial/main.py
+Restart=on-failure
+User=%i
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
